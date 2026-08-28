@@ -2,7 +2,9 @@ const User = require("../models/User");
 
 const getUserProfile = async (req, res) => {
   try {
-    const user = await User.findById(req.user._id);
+    const user = await User.findById(req.user._id)
+      .populate("followers", "username email profilePicture")
+      .populate("following", "username email profilePicture");
     if (user) {
       res.json({
         _id: user._id,
