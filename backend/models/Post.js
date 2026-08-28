@@ -7,7 +7,7 @@ const postSchema = mongoose.Schema(
       required: true,
       ref: "User",
     },
-    text: {
+    content: {
       type: String,
       required: true,
     },
@@ -27,7 +27,7 @@ const postSchema = mongoose.Schema(
           required: true,
           ref: "User",
         },
-        text: {
+        content: {
           type: String,
           required: true,
         },
